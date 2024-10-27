@@ -106,7 +106,9 @@ class SlotMachine:
     def get_bet(self):
         """Get user input for bet amount per line."""
         while True:
-            amount = input("How much would you like to bet ($1-$100)? $")
+            amount = input(
+                f"How much would you like to bet (${MIN_BET} - ${MAX_BET})? $"
+            )
             if amount.isdigit():
                 amount = int(amount)
                 if MIN_BET <= amount <= MAX_BET:
